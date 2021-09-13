@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS DOM</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mdb.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <style>
+        input[type='checkbox'] {
+            margin-left: -5px;
+        }
+
+        #show {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white text-center">
+                        <h3>JS PASSWORD BOX</h3>
+                    </div>
+                    <div class="card-body bg-light">
+                        <div class="input-group mb-3">
+                            <div class="input-group-text">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="check-box"><span
+                                    id="show">Show Password</span>
+                            </div>
+                            <input type="password" class="form-control mt-1" placeholder="Enter Password"
+                                id="password-box">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Script Code-->
+    <script>
+        let checkBox = document.querySelector('#check-box');
+        let passwordBox = document.querySelector('#password-box');
+        checkBox.addEventListener('change', function () {
+            //alert('Working');
+            let textEntered = passwordBox.getAttribute('type');
+
+            if (textEntered === 'password') {
+                passwordBox.setAttribute('type', 'text');
+            }
+            else {
+                passwordBox.setAttribute('type', 'password');
+            }
+
+        });
+    </script>
+</body>
+
+</html>
